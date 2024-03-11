@@ -1,0 +1,28 @@
+[
+  {
+    "Id": 1,
+    "Nombre": "Juan Perez",
+    "Matricula": "123456"
+  },
+  {
+    "Id": 2,
+    "Nombre": "Maria Lopez",
+    "Matricula": "654321"
+  },
+  {
+    "Id": 3,
+    "Nombre": "Carlos Hernandez",
+    "Matricula": "789012"
+  },
+  {
+    "Id": 4,
+    "Nombre": "Ana Rodriguez",
+    "Matricula": "345678"
+  },
+  {
+    "Id": 5,
+    "Nombre": "Pedro Garcia",
+    "Matricula": "901234"
+  }
+]
+

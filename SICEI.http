@@ -1,0 +1,6 @@
+@SICEI_HostAddress = http://localhost:5120
+
+GET {{SICEI_HostAddress}}/alumnos/
+Accept: application/json
+
+###
