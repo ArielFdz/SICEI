@@ -1,4 +1,4 @@
-﻿namespace ExampleDockerAPI.DTOs
+﻿namespace SICEI.DTOs
 {
     public class AlumnoDTO
     {

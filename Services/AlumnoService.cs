@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using ExampleDockerAPI.DTOs;
-using ExampleDockerAPI.Interfaces;
-using ExampleDockerAPI.Models;
+using SICEI.DTOs;
+using SICEI.Interfaces;
+using SICEI.Models;
 using System.Text.Json;
 
-namespace ExampleDockerAPI.Services
+namespace SICEI.Services
 {
     public class AlumnoService : IAlumnoService
     {

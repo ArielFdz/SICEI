@@ -1,7 +1,7 @@
-using ExampleDockerAPI.DataAccess;
-using ExampleDockerAPI.Interfaces;
-using ExampleDockerAPI.Services;
-using ExampleDockerAPI.Utils;
+using SICEI.DataAccess;
+using SICEI.Interfaces;
+using SICEI.Services;
+using SICEI.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 

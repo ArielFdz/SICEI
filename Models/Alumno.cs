@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ExampleDockerAPI.Models
+namespace SICEI.Models
 {
     public class Alumno
     {

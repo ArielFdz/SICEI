@@ -1,7 +1,7 @@
-﻿using ExampleDockerAPI.DTOs;
-using ExampleDockerAPI.Models;
+﻿using SICEI.DTOs;
+using SICEI.Models;
 
-namespace ExampleDockerAPI.Interfaces
+namespace SICEI.Interfaces
 {
     public interface IAlumnoRepository
     {

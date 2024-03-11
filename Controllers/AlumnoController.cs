@@ -1,10 +1,10 @@
-﻿using ExampleDockerAPI.DTOs;
-using ExampleDockerAPI.Interfaces;
-using ExampleDockerAPI.Models;
-using ExampleDockerAPI.Services;
+﻿using SICEI.DTOs;
+using SICEI.Interfaces;
+using SICEI.Models;
+using SICEI.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ExampleDockerAPI.Controllers
+namespace SICEI.Controllers
 {
     [ApiController]
     [Route("[controller]")]

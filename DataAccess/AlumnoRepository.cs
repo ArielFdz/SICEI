@@ -1,11 +1,11 @@
-﻿using ExampleDockerAPI.DTOs;
-using ExampleDockerAPI.Interfaces;
-using ExampleDockerAPI.Models;
+﻿using SICEI.DTOs;
+using SICEI.Interfaces;
+using SICEI.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.Extensions.Options;
 using System.Text.Json;
 
-namespace ExampleDockerAPI.DataAccess
+namespace SICEI.DataAccess
 {
     public class AlumnoRepository : IAlumnoRepository
     {

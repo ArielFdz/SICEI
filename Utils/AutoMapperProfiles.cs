@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using ExampleDockerAPI.DTOs;
-using ExampleDockerAPI.Models;
+using SICEI.DTOs;
+using SICEI.Models;
 
-namespace ExampleDockerAPI.Utils
+namespace SICEI.Utils
 {
     public class AutoMapperProfiles : Profile
     {
