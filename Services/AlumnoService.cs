@@ -59,7 +59,7 @@ namespace SICEI.Services
                 if (existeMatricula == null && existeNombre == null)
                 {
                     alumno.Id = ultimoId + 1 ;
-                    sResp = await alumnoRepository.Post(alumno, alumnos);
+                    sResp = await alumnoRepository.Post(alumno);
                 }
                 
             }
@@ -87,7 +87,7 @@ namespace SICEI.Services
                 }
                 else
                 {
-                    sResp = await alumnoRepository.Put(alumnoEditar, alumnos);
+                    sResp = await alumnoRepository.Put(alumnoEditar);
                 }       
             }
             catch (Exception ex)
@@ -114,7 +114,7 @@ namespace SICEI.Services
                 }
                 else
                 {
-                    sResp = await alumnoRepository.Delete(idAlumno, alumnos, alumnoAEliminar);
+                    sResp = await alumnoRepository.Delete(idAlumno, alumnoAEliminar);
                 }
                 
             }
