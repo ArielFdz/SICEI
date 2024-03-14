@@ -9,7 +9,13 @@ namespace SICEI.DataAccess
 {
     public class AlumnoRepository : IAlumnoRepository
     {
-        public static string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Content/Alumno.json");
+        //public static string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Content/Alumno.json");
+        public static List<Alumno> listaAlumnos = new List<Alumno>()
+        {
+            new Alumno { Id = 1, Nombre = "Juan", Matricula = "A12345" },
+            new Alumno { Id = 2, Nombre = "María", Matricula = "B67890" },
+            new Alumno { Id = 3, Nombre = "Pedro", Matricula = "C24680" }
+        };
 
         public async Task<List<Alumno>> Get()
         {
@@ -17,16 +23,7 @@ namespace SICEI.DataAccess
 
             try
             {
-
-                if (string.IsNullOrEmpty(filePath))
-                {
-                    throw new Exception("No se encontró ningún archivo con ese nombre");
-                }
-
-                string jsonString = await File.ReadAllTextAsync(filePath);
-
-                alumnos = jsonString.Length > 0 ? JsonSerializer.Deserialize<List<Alumno>>(jsonString) : new List<Alumno>();
-
+                alumnos = listaAlumnos;
             }
             catch (Exception ex)
             {
@@ -36,21 +33,14 @@ namespace SICEI.DataAccess
             return alumnos;
         }
 
-        public async Task<string> Post(Alumno nuevoAlumno, List<Alumno> alumnos)
+        public async Task<string> Post(Alumno nuevoAlumno)
         {
             string sResp = string.Empty;
-            string jsonString = string.Empty;
 
             try
             {
-                if (string.IsNullOrEmpty(filePath))
-                {
-                    throw new Exception("No se encontró ningún archivo con ese nombre");
-                }
 
-                alumnos.Add(nuevoAlumno);
-                jsonString = JsonSerializer.Serialize(alumnos);
-                await File.WriteAllTextAsync(filePath, jsonString);
+                listaAlumnos.Add(nuevoAlumno);
                 sResp = "Alumno agregado correctamente - ID: " + nuevoAlumno.Id;
 
             }
@@ -62,26 +52,15 @@ namespace SICEI.DataAccess
             return sResp;
         }
 
-        public async Task<string> Put(Alumno alumnoEditar, List<Alumno> alumnos)
+        public async Task<string> Put(Alumno alumnoEditar)
         {
-
             string sResp = string.Empty;
-            string jsonString = string.Empty;
 
             try
             {
-                if (string.IsNullOrEmpty(filePath))
-                {
-                    throw new Exception("No se encontró ningún archivo con ese nombre");
-                }
-
-                var alumnoPorActualizar = alumnos.Find(alumno => alumno.Id == alumnoEditar.Id);
-
+                var alumnoPorActualizar = listaAlumnos.Find(alumno => alumno.Id == alumnoEditar.Id);
                 alumnoPorActualizar.Nombre = alumnoEditar.Nombre;
                 alumnoPorActualizar.Matricula = alumnoEditar.Matricula;
-                jsonString = JsonSerializer.Serialize(alumnos);
-
-                await File.WriteAllTextAsync(filePath, jsonString);
 
                 sResp = $"Estudiante con ID {alumnoPorActualizar.Id} actualizado correctamente";
 
@@ -94,22 +73,14 @@ namespace SICEI.DataAccess
             return sResp;
         }
 
-        public async Task<string> Delete(int id, List<Alumno> alumnos, Alumno alumnoEliminar)
+        public async Task<string> Delete(int id, Alumno alumnoEliminar)
         {
             string response = string.Empty;
             string jsonString = string.Empty;
 
             try
             {
-                if (string.IsNullOrEmpty(filePath))
-                {
-                    throw new Exception("No se encontró ningún archivo con ese nombre");
-                }
-
-                alumnos.Remove(alumnoEliminar);
-                jsonString = JsonSerializer.Serialize(alumnos);
-                await File.WriteAllTextAsync(filePath, jsonString);
-
+                listaAlumnos.Remove(alumnoEliminar);
                 response = $"Estudiante con ID {id} eliminado correctamente";
 
             }
